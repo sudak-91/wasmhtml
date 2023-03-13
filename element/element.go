@@ -5,9 +5,9 @@ import (
 	"reflect"
 	"syscall/js"
 
-	"github.com/sudal-91/wasmhtml"
-	"github.com/sudal-91/wasmhtml/attribute"
-	"github.com/sudal-91/wasmhtml/event"
+	"github.com/sudak-91/wasmhtml"
+	"github.com/sudak-91/wasmhtml/attribute"
+	"github.com/sudak-91/wasmhtml/event"
 )
 
 type HtmlGenerator interface {

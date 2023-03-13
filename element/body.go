@@ -3,7 +3,7 @@ package element
 import (
 	"log"
 
-	"github.com/sudal-91/wasmhtml"
+	"github.com/sudak-91/wasmhtml"
 )
 
 type Body struct {

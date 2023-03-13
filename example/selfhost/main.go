@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/sudal-91/wasmhtml/element"
+	"github.com/sudak-91/wasmhtml/element"
 )
 
 func main() {

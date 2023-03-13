@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/sudal-91/wasmhtml/attribute"
+	"github.com/sudak-91/wasmhtml/attribute"
 )
 
 type InjectBaseAttrinute struct {
@@ -19,7 +19,7 @@ func TestCommonAttrinute(t *testing.T) {
 
 func TestInjectBaseAttribute(t *testing.T) {
 	var data InjectBaseAttrinute
-	data.base.Class = "SisskY"
+
 	getReflectData(data)
 }
 

@@ -1,6 +1,6 @@
 package element
 
-import "github.com/sudal-91/wasmhtml"
+import "github.com/sudak-91/wasmhtml"
 
 type Div struct {
 	CommonElement
