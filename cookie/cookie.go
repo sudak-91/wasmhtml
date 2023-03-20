@@ -45,6 +45,15 @@ func (c *Cookie) AddCoookie(key string, value string) {
 
 }
 
+func (c *Cookie) GetValue(key string) (string, error) {
+	c.parseCookie()
+	value, ok := c.data[key]
+	if !ok {
+		return "", fmt.Errorf("%s", "Not Value")
+	}
+	return value, nil
+}
+
 func (c *Cookie) parseCookie() {
 	l := strings.Split(c.object.String(), ";")
 	for _, value := range l {
