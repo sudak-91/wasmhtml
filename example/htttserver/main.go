@@ -11,5 +11,7 @@ func main() {
 	if err := http.ListenAndServe("localhost:8000", mux); err != nil {
 		log.Fatal(err)
 	}
+	c := make(chan bool)
+	<-c
 
 }

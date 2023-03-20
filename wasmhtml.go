@@ -11,10 +11,3 @@ type Elements interface {
 	NewButton(id string) js.Value
 	NewInput(id string) js.Value
 }
-
-type Element struct {
-	Object     js.Value
-	Hidden     bool
-	Attributes map[string]string
-	Events     map[string]string
-}
