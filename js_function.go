@@ -36,6 +36,7 @@ func AddClass(object js.Value, className string) {
 	object.Get("classList").Call("add", className)
 }
 
+// Sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
 func SetAttribute(object js.Value, attributeName string, attributeValue string) {
 	object.Call("setAttribute", attributeName, attributeValue)
 }

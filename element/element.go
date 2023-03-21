@@ -54,7 +54,7 @@ func (c *CommonElement) subValueGenerate(value reflect.Value) {
 		}
 		event, ok := subType.Field(i).Tag.Lookup("htmlevnt")
 		if ok {
-			c.typeSelector(value.Field(i), event)
+			c.eventSelector(value.Field(i), event)
 			//wasmhtml.SetAttribute(c.Object, event, value.Field(i).String())
 		}
 		continue
@@ -75,5 +75,16 @@ func (c *CommonElement) typeSelector(value reflect.Value, tag string) {
 		}
 	default:
 		log.Println("Invalid data type")
+	}
+}
+
+func (c *CommonElement) eventSelector(value reflect.Value, event string) {
+	switch v := value.Kind(); v {
+	case reflect.String:
+		if value.String() != "" {
+			wasmhtml.SetAttribute(c.Object, event, value.String())
+		}
+	default:
+		log.Println("Invalid type")
 	}
 }
