@@ -54,7 +54,8 @@ func (c *CommonElement) subValueGenerate(value reflect.Value) {
 		}
 		event, ok := subType.Field(i).Tag.Lookup("htmlevnt")
 		if ok {
-			wasmhtml.SetAttribute(c.Object, event, value.Field(i).String())
+			c.typeSelector(value.Field(i), event)
+			//wasmhtml.SetAttribute(c.Object, event, value.Field(i).String())
 		}
 		continue
 	}
