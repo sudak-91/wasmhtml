@@ -1,10 +1,10 @@
 package event
 
 type BaseEvent struct {
-	OnBlur      string `htmlevnt:"onblur"`
-	OnChange    string `htmlevnt:"onchange"`
-	OnClick     string `htmlevnt:"onclick"`
-	OnDbClick   string `htmlevnt:"ondbclick"`
+	//OnBlur      string `htmlevnt:"onblur"`
+	//OnChange    string `htmlevnt:"onchange"`
+	//OnClick     string `htmlevnt:"onclick"`
+	//OnDbClick   string `htmlevnt:"ondbclick"`
 	OnFocus     string `htmlevnt:"onfocus"`
 	OnKeyDown   string `htmlevnt:"onkeydown"`
 	OnKeyPress  string `htmlevnt:"onkeypress"`

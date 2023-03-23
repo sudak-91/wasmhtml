@@ -10,14 +10,19 @@ import (
 func main() {
 	body := element.GetBody()     //Получение <BODY>
 	leftdiv := body.AddDiv()      //Создание дочернего <DIV>
-	leftdiv.Id = "lefyDiv"        //Добавление ID
+	leftdiv.SetID("LeftDiv")      //Добавление ID
 	leftdiv.AddClass("container") //Добавление клааса
-	rightdiv := body.AddDiv()
+	leftdiv.SetHidden()
+	/*rightdiv := body.AddDiv()
 	rightdiv.Id = "rightDiv"
 	rightdiv.InnerHtml = "Click me"
 	rightdiv.OnClick = "alert(\"tada\")"
-	rightdiv.AddClass("container")
+	rightdiv.AddClass("container")*/
 	body.Generate() //Генерация старницы
+	log.Println(leftdiv.IsHidden())
+	leftdiv.RemoveHidden()
+	leftdiv.SetRTLDir()
+	leftdiv.SetInnerHtml("простой текст для тестирования")
 	cookie := cookie.NewCookie()
 	cookie.AddCoookie("test", "success")
 	cookie.AddCoookie("test2", "eahhh")

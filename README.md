@@ -6,10 +6,13 @@
 `go get github.com/sudak-91/wasmhtml`
 
 ## Создание страницы
+
 ```
-	body := element.GetBody()     //Получение <BODY>
-	leftdiv := body.AddDiv()      //Создание дочернего <DIV>
-	leftdiv.Id = "lefyDiv"        //Добавление ID
-	leftdiv.AddClass("container") //Добавление клааса
-	body.Generatr() 			  //Генерация страницы
-```
+
+
+#TODO
+[]Проверить добавление несколько свойств стиля последовательно
+[]Разработать модуль работы с CSS
+[]протестировать базовые HTML event
+
+[]Добавиьт аттрибт XML:LANG
