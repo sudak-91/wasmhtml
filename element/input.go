@@ -2,6 +2,7 @@ package element
 
 import (
 	"log"
+	"syscall/js"
 
 	"github.com/sudak-91/wasmhtml"
 )
@@ -37,9 +38,15 @@ type Input struct {
 	Step           string `htmlattr:"step"` //incremental step
 	Tabindex       string `htmlattr:"tabindex"`
 	Type           string `htmlattr:"type"`
-	Value          string `htmlattr:"value"`
 }
 
+func (i *Input) GetValue() js.Value {
+	return wasmhtml.GetValue(i.Object)
+}
+
+func (i *Input) SetValue(value string) {
+	wasmhtml.SetValue(i.Object, value)
+}
 func NewInput() Input {
 	var input Input
 	input.Object = wasmhtml.CreateElement("input")

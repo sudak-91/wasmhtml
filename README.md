@@ -14,5 +14,7 @@
 []Проверить добавление несколько свойств стиля последовательно
 []Разработать модуль работы с CSS
 []протестировать базовые HTML event
-
+[]Добавить addEvent's в базовый элемент
+[x]Добавить RemoveChild в js func
+[x]Add RemoveAllChild method to ELEMENT
 []Добавиьт аттрибт XML:LANG

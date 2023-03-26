@@ -125,6 +125,24 @@ func SetSpellcheck(object js.Value, value string) {
 	SetAttribute(object, "spellcheck", value)
 }
 
+func AddClickEventListenr(object js.Value, jsFunc js.Func) {
+	AddEventListener(object, "click", jsFunc)
+}
+
+func RemoveClickEventListener(object js.Value) {
+	RemoveEventListener(object, "click")
+}
+
+// AddEventListener
+func AddEventListener(object js.Value, event string, jsFunc js.Func) {
+	object.Call("addEventListener", event, jsFunc)
+}
+
+// RemoveEventListener
+func RemoveEventListener(object js.Value, event string) {
+	object.Call("removeEventListener", event)
+}
+
 // Get HTML attribute SPELLCHECK
 func GetSpellcheck(object js.Value) (bool, error) {
 	result := GetAttribute(object, "spellcheck")
@@ -242,6 +260,29 @@ func SetOnKeyPressEvent(object js.Value, funcName string) {
 func RemoveOnKeyPressEvent(object js.Value) {
 	RemoveAttribute(object, "onkeypress")
 }
+
+// Set HTML event onkeyup
+func SetOnKeyUpEvent(object js.Value, funcName string) {
+	SetAttribute(object, "onkeyup", funcName)
+}
+
+func RemoveOnKeyUpEvent(object js.Value) {
+	RemoveAttribute(object, "onkeyup")
+}
+
+func RemoveChild(parent js.Value, child js.Value) {
+	parent.Call("removeChild", child)
+}
+
+// HTML attribute VALUE
+func GetValue(object js.Value) js.Value {
+	return GetAttribute(object, "value")
+}
+
+func SetValue(object js.Value, value string) {
+	SetAttribute(object, "value", value)
+}
+
 func InnerHtml(object js.Value, value string) {
 	Set(object, "innerHTML", value)
 }

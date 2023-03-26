@@ -180,8 +180,18 @@ func (c *CommonElement) RemoveTabindex() {
 	wasmhtml.RemoveTabindex(c.Object)
 }
 
+func (c *CommonElement) RemoveAllChild() {
+	for _, v := range c.Child {
+		if data, ok := v.(HtmlGenerator); ok {
+			wasmhtml.RemoveChild(c.Object, data.GetObject())
+		}
+	}
+	c.Child = nil
+}
+
 func (c *CommonElement) AddDiv() *Div {
 	result := NewDiv()
+	c.Child = append(c.Child, result)
 	c.appendChild(result.Object)
 	return result
 }

@@ -5,10 +5,10 @@ type BaseEvent struct {
 	//OnChange    string `htmlevnt:"onchange"`
 	//OnClick     string `htmlevnt:"onclick"`
 	//OnDbClick   string `htmlevnt:"ondbclick"`
-	OnFocus     string `htmlevnt:"onfocus"`
-	OnKeyDown   string `htmlevnt:"onkeydown"`
-	OnKeyPress  string `htmlevnt:"onkeypress"`
-	OnKeyUp     string `htmlevnt:"onkeyup"`
+	//OnFocus     string `htmlevnt:"onfocus"`
+	//OnKeyDown   string `htmlevnt:"onkeydown"`
+	//OnKeyPress  string `htmlevnt:"onkeypress"`
+	//OnKeyUp     string `htmlevnt:"onkeyup"`
 	OnLoad      string `htmlevnt:"onload"`
 	OnMouseDown string `htmlevnt:"onmousedown"`
 	OnMouseMove string `htmlevnt:"onmousemove"`
