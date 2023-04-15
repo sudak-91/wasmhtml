@@ -212,6 +212,20 @@ func (c *CommonElement) AddLabel() *Label {
 	c.Child = append(c.Child, label.CommonElement)
 	return &label
 }
+
+func (c *CommonElement) AddUl() *Ul {
+	ul := NewUl()
+	c.Child = append(c.Child, ul)
+	c.appendChild(ul.Object)
+	return ul
+}
+
+func (c *CommonElement) AddLi() *Li {
+	li := NewLi()
+	c.Child = append(c.Child, li)
+	c.appendChild(li.Object)
+	return li
+}
 func (c *CommonElement) AddClass(class string) {
 	c.Class = append(c.Class, class)
 }
