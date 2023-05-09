@@ -313,3 +313,8 @@ func RemoveHidden(object js.Value) {
 func RemoveAttribute(object js.Value, attributeName string) {
 	object.Call("removeAttribute", attributeName)
 }
+
+func GetContext(object js.Value, contextType string) js.Value {
+	context := object.Call("getContext", contextType)
+	return context
+}

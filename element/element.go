@@ -195,6 +195,13 @@ func (c *CommonElement) AddDiv() *Div {
 	c.appendChild(result.Object)
 	return result
 }
+
+func (c *CommonElement) AddCanvas() *Canvas {
+	result := NewCanvas()
+	c.Child = append(c.Child, result)
+	c.appendChild(result.Object)
+	return result
+}
 func (c *CommonElement) appendChild(child js.Value) {
 	c.Object.Call("appendChild", child)
 }
