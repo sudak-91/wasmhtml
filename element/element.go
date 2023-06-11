@@ -180,6 +180,16 @@ func (c *CommonElement) RemoveTabindex() {
 	wasmhtml.RemoveTabindex(c.Object)
 }
 
+func (c *CommonElement) EnableDraggable() {
+	wasmhtml.SetDraggable(c.Object, "true")
+}
+func (c *CommonElement) DisableDraggable() {
+	wasmhtml.SetDraggable(c.Object, "false")
+}
+func (c *CommonElement) RemoveDraggable() {
+	wasmhtml.RemoveDraggable(c.Object)
+}
+
 func (c *CommonElement) RemoveAllChild() {
 	for _, v := range c.Child {
 		if data, ok := v.(HtmlGenerator); ok {
