@@ -180,6 +180,16 @@ func (c *CommonElement) RemoveTabindex() {
 	wasmhtml.RemoveTabindex(c.Object)
 }
 
+func (c *CommonElement) EnableDraggable() {
+	wasmhtml.SetDraggable(c.Object, "true")
+}
+func (c *CommonElement) DisableDraggable() {
+	wasmhtml.SetDraggable(c.Object, "false")
+}
+func (c *CommonElement) RemoveDraggable() {
+	wasmhtml.RemoveDraggable(c.Object)
+}
+
 func (c *CommonElement) RemoveAllChild() {
 	for _, v := range c.Child {
 		if data, ok := v.(HtmlGenerator); ok {
@@ -191,6 +201,13 @@ func (c *CommonElement) RemoveAllChild() {
 
 func (c *CommonElement) AddDiv() *Div {
 	result := NewDiv()
+	c.Child = append(c.Child, result)
+	c.appendChild(result.Object)
+	return result
+}
+
+func (c *CommonElement) AddCanvas() *Canvas {
+	result := NewCanvas()
 	c.Child = append(c.Child, result)
 	c.appendChild(result.Object)
 	return result

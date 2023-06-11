@@ -8,6 +8,9 @@ import (
 	"github.com/sudak-91/wasmhtml/attribute"
 )
 
+type K struct {
+	asdf int
+}
 type InjectBaseAttrinute struct {
 	base attribute.BaseAttribute
 }
@@ -15,6 +18,7 @@ type InjectBaseAttrinute struct {
 func TestCommonAttrinute(t *testing.T) {
 	var data attribute.BaseAttribute
 	getReflectData(data)
+
 }
 
 func TestInjectBaseAttribute(t *testing.T) {

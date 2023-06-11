@@ -133,6 +133,32 @@ func RemoveClickEventListener(object js.Value) {
 	RemoveEventListener(object, "click")
 }
 
+func AddDragStartListener(object js.Value, jsFunc js.Func) {
+	AddEventListener(object, "dragstart", jsFunc)
+}
+func RemoveDragStartListener(object js.Value) {
+	RemoveEventListener(object, "dragstart")
+}
+
+func AddDragEndListener(object js.Value, jsFunc js.Func) {
+	AddEventListener(object, "dragend", jsFunc)
+}
+func RemoveDragEndListener(object js.Value) {
+	RemoveEventListener(object, "dragend")
+}
+func AddDragOverListener(object js.Value, jsFunc js.Func) {
+	AddEventListener(object, "dragover", jsFunc)
+}
+func RemoveDragOverListener(object js.Value) {
+	RemoveEventListener(object, "dragover")
+}
+func AddDropListener(object js.Value, jsFunc js.Func) {
+	AddEventListener(object, "drop", jsFunc)
+}
+func RemoveDropListener(object js.Value) {
+	RemoveEventListener(object, "drop")
+}
+
 // AddEventListener
 func AddEventListener(object js.Value, event string, jsFunc js.Func) {
 	object.Call("addEventListener", event, jsFunc)
@@ -270,6 +296,13 @@ func RemoveOnKeyUpEvent(object js.Value) {
 	RemoveAttribute(object, "onkeyup")
 }
 
+func SetDraggable(object js.Value, value string) {
+	SetAttribute(object, "draggable", value)
+}
+
+func RemoveDraggable(object js.Value) {
+	RemoveAttribute(object, "draggable")
+}
 func RemoveChild(parent js.Value, child js.Value) {
 	parent.Call("removeChild", child)
 }
@@ -312,4 +345,9 @@ func RemoveHidden(object js.Value) {
 // Remove HTML attribute 'attributeName'
 func RemoveAttribute(object js.Value, attributeName string) {
 	object.Call("removeAttribute", attributeName)
+}
+
+func GetContext(object js.Value, contextType string) js.Value {
+	context := object.Call("getContext", contextType)
+	return context
 }
