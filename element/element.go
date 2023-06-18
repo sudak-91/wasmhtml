@@ -230,6 +230,10 @@ func (c *CommonElement) AddLabel() *Label {
 	return &label
 }
 
+func (c *CommonElement) GetChildren() (js.Value, error) {
+	return wasmhtml.GetChildren(c.Object)
+}
+
 func (c *CommonElement) AddUl() *Ul {
 	ul := NewUl()
 	c.Child = append(c.Child, ul)
