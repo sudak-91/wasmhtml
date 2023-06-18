@@ -217,10 +217,10 @@ func (c *CommonElement) appendChild(child js.Value) {
 }
 
 func (c *CommonElement) AddInput() *Input {
-	var input Input
-	input.Object = wasmhtml.CreateElement("input")
-	c.Child = append(c.Child, &input.CommonElement)
-	return &input
+	result := NewInput()
+	c.Child = append(c.Child, result)
+	c.appendChild(result.Object)
+	return result
 }
 
 func (c *CommonElement) AddLabel() *Label {
