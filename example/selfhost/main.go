@@ -75,6 +75,7 @@ func NewMainPage() *MainPage {
 	wasmhtml.AddEventListener(CircleButton.Object, "dragstart", js.FuncOf(mainPage.DragStart))
 	//wasmhtml.AddEventListener(CircleButton.Object, "dragend", js.FuncOf(mainPage.DragStop))
 	mainPage.Container = mainPage.MainDiv.AddDiv()
+	mainPage.Container.SetID("container")
 	mainPage.Container.AddClass("cont")
 	mainPage.Container.SetStyle(`
 		background: #D2D2D2;
@@ -142,6 +143,16 @@ func main() {
 	//for k, v := range data {
 	//	log.Printf("%s is %s", k, v)
 	//}*/
+	children, _ := wasmhtml.GetChildren(MainPage.MainDiv.Object)
+	jsType := children.Type().String()
+	log.Println(jsType)
+	log.Println(children.Length())
+	for i := 0; i < children.Length(); i++ {
+		val := children.Index(i)
+		log.Println(val.Type().String())
+		attr := wasmhtml.GetID(val)
+		log.Println(attr)
+	}
 	c := make(chan bool)
 	<-c
 

@@ -1,6 +1,7 @@
 package wasmhtml
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
 	"syscall/js"
@@ -350,4 +351,18 @@ func RemoveAttribute(object js.Value, attributeName string) {
 func GetContext(object js.Value, contextType string) js.Value {
 	context := object.Call("getContext", contextType)
 	return context
+}
+
+func GetParent(object js.Value) (js.Value, error) {
+	result := object.Get("parentElement")
+	ok := result.IsUndefined() || result.IsNull()
+	if !ok {
+		return js.Value{}, errors.New("null or undefine elements")
+	}
+	return result, nil
+}
+
+func GetChildren(object js.Value) (js.Value, error) {
+	result := object.Get("children")
+	return result, nil
 }
