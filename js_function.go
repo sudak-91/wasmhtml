@@ -1,7 +1,6 @@
 package wasmhtml
 
 import (
-	"errors"
 	"fmt"
 	"strconv"
 	"syscall/js"
@@ -355,10 +354,10 @@ func GetContext(object js.Value, contextType string) js.Value {
 
 func GetParent(object js.Value) (js.Value, error) {
 	result := object.Get("parentElement")
-	ok := result.IsUndefined() || result.IsNull()
+	/*ok := result.IsUndefined() || result.IsNull()
 	if !ok {
 		return js.Value{}, errors.New("null or undefine elements")
-	}
+	}*/
 	return result, nil
 }
 
